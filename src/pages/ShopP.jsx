@@ -1,8 +1,12 @@
-import ItemCard from '../components/itemCard';
+import AllItems from '../components/itemCard';
+import styles from '../components/itemCard.module.css';
+
 function Shop() {
   return (
     <>
-      <ItemCard />
+      <div className={styles.container}>
+        <AllItems />
+      </div>
     </>
   );
 }

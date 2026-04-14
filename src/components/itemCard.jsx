@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import styles from './itemCard.module.css';
-function ItemCard() {
+
+function ItemCard({ id }) {
   const [data, setData] = useState();
   useEffect(() => {
     async function response() {
-      const itemData = await (await fetch('https://fakestoreapi.com/products/1')).json();
+      const itemData = await (await fetch(`https://fakestoreapi.com/products/${id}`)).json();
       setData(itemData);
       console.log(itemData);
     }
@@ -34,4 +35,9 @@ function ItemCard() {
     </>
   );
 }
-export default ItemCard;
+
+function AllItems() {
+  const itemsID = Array.from({ length: 12 }, (_, i) => i + 1);
+  return itemsID.map((id) => <ItemCard id={id} />);
+}
+export default AllItems;

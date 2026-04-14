@@ -4,6 +4,6 @@ body {
 }
 #root {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 1fr 9fr;
   height: 100vh;
 }
