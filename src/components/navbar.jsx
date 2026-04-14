@@ -1,7 +1,9 @@
+import styles from './navbar.module.css';
+
 function Nav() {
   return (
     <nav>
-      <div className="branding">
+      <div className={styles.branding}>
         <h1>Odin Shop</h1>
         <p>made by</p>
         <a href="https://github.com/drmor">ne_uchi</a>
