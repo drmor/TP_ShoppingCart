@@ -9,18 +9,17 @@ const routes = [
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: 'home',
-    element: <Home />,
-  },
-  {
-    path: 'shop',
-    element: <Shop />,
-  },
-  {
-    path: 'cart',
-    element: <Cart />,
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: 'shop',
+        element: <Shop />,
+      },
+      {
+        path: 'cart',
+        element: <Cart />,
+      },
+    ],
   },
 ];
 
