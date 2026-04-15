@@ -13,11 +13,11 @@
   height: 80%;
 }
 .infoBg {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 70% 30%;
   text-align: center;
+  justify-items: center;
+  align-items: center;
   background-color: white;
   border-radius: 0 0 10px 10px;
   height: 100%;

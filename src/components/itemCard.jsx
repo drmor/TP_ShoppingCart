@@ -19,7 +19,9 @@ function ItemCard({ id }) {
           <div className={styles.infoBg}>
             <div className={styles.info}>
               <p>{data.title}</p>
-              <p>${data.price}</p>
+              <b>
+                <p>${data.price}</p>
+              </b>
             </div>
             <div className={styles.buttons}>
               <button>-</button>
