@@ -14,7 +14,10 @@
 }
 .infoBg {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  text-align: center;
   background-color: white;
   border-radius: 0 0 10px 10px;
   height: 100%;
@@ -22,16 +25,15 @@
 .info {
   width: 80%;
   margin: 0 auto;
-  text-align: center;
 }
 .info > p {
   margin-top: 0;
 }
 .buttons {
   display: grid;
-  grid-template-columns: 9% 29% 9% 47%;
+  grid-template-columns: 12% 20% 12% 50%;
   gap: 5px;
-  width: 100%;
+  width: 80%;
   height: 25px;
 }
 .container {
@@ -40,4 +42,19 @@
   justify-content: center;
   gap: 1rem;
   padding: 3rem;
+}
+button {
+  background-color: #dcccac;
+  border: 1px solid #99ad7a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input {
+  background-color: #fff8ec;
+  border: 1px solid #99ad7a;
+  border-radius: 5px;
+}
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
 }

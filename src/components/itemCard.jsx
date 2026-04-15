@@ -20,12 +20,12 @@ function ItemCard({ id }) {
             <div className={styles.info}>
               <p>{data.title}</p>
               <p>${data.price}</p>
-              <div className={styles.buttons}>
-                <button>-</button>
-                <input type="number" value={1} />
-                <button>+</button>
-                <button>Add to Cart</button>
-              </div>
+            </div>
+            <div className={styles.buttons}>
+              <button>-</button>
+              <input type="number" value={1} />
+              <button>+</button>
+              <button>Add to Cart</button>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ function ItemCard({ id }) {
 }
 
 function AllItems() {
-  const itemsID = Array.from({ length: 12 }, (_, i) => i + 1);
+  const itemsID = [1, 2, 3, 4, 5, 13, 7, 14, 9, 10, 11, 12];
   return itemsID.map((id) => <ItemCard id={id} />);
 }
 export default AllItems;
