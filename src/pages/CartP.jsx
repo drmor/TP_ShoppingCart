@@ -3,6 +3,7 @@ import styles from './CartP.module.css';
 import { useOutletContext } from 'react-router';
 function Cart() {
   const { cart, manipulate } = useOutletContext();
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return (
     <>
       <div className={styles.container}>
@@ -45,6 +46,10 @@ function Cart() {
             </li>
           ))}
         </ul>
+        <div className={styles.total}>
+          <p>Total items: {cart.length}</p>
+          <p>Total Price: ${total}</p>
+        </div>
       </div>
     </>
   );

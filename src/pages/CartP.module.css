@@ -6,8 +6,9 @@
   width: 80%;
   margin: 0 auto;
   background-color: #eeeeee;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 2rem;
+  gap: 3rem;
 }
 .items {
   margin: 0;
@@ -64,4 +65,12 @@
 }
 .overall button {
   height: 100%;
+}
+.total {
+  font-size: 1.5rem;
+  border: 2px solid #546b41;
+  border-radius: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
 }
