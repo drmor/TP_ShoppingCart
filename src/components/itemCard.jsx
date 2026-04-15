@@ -3,11 +3,11 @@ import styles from './itemCard.module.css';
 
 function ItemCard({ id }) {
   const [data, setData] = useState();
+  const [quantity, setQuantity] = useState(1);
   useEffect(() => {
     async function response() {
       const itemData = await (await fetch(`https://fakestoreapi.com/products/${id}`)).json();
       setData(itemData);
-      console.log(itemData);
     }
     response();
   }, []);
@@ -24,9 +24,22 @@ function ItemCard({ id }) {
               </b>
             </div>
             <div className={styles.buttons}>
-              <button>-</button>
-              <input type="number" value={1} />
-              <button>+</button>
+              <button
+                onClick={() => {
+                  if (quantity - 1 == -1) return;
+                  setQuantity(quantity - 1);
+                }}
+              >
+                -
+              </button>
+              <input type="number" value={quantity} onChange={(event) => setQuantity(parseInt(event.target.value))} />
+              <button
+                onClick={() => {
+                  setQuantity(quantity + 1);
+                }}
+              >
+                +
+              </button>
               <button>Add to Cart</button>
             </div>
           </div>
@@ -40,6 +53,6 @@ function ItemCard({ id }) {
 
 function AllItems() {
   const itemsID = [1, 2, 3, 4, 5, 13, 7, 14, 9, 10, 11, 12];
-  return itemsID.map((id) => <ItemCard id={id} />);
+  return itemsID.map((id) => <ItemCard key={id} id={id} />);
 }
 export default AllItems;
