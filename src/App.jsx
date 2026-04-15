@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import Nav from './components/navbar';
-import Home from './pages/HomeP';
-import Shop from './pages/ShopP';
-import Cart from './pages/CartP';
 import { Outlet } from 'react-router';
-
+import Nav from './components/navbar';
 function App() {
+  const [cart, setCart] = useState([]);
   return (
     <>
-      <Outlet />
+      <Nav />
+      <Outlet context={{ cart, setCart }} />
     </>
   );
 }

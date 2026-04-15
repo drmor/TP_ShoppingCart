@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import styles from './navbar.module.css';
+import { useOutletContext } from 'react-router';
 
 function Nav() {
   return (

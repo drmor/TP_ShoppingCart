@@ -1,9 +1,7 @@
-import Nav from '../components/navbar';
 import styles from './HomeP.module.css';
 function Home() {
   return (
     <>
-      <Nav />
       <div className={styles.container}>
         <h1>Odin Shop</h1>
         <p>

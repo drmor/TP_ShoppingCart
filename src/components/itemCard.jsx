@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router';
 import styles from './itemCard.module.css';
 
 function ItemCard({ id }) {
   const [data, setData] = useState();
   const [quantity, setQuantity] = useState(1);
+  const { cart, setCart } = useOutletContext();
   useEffect(() => {
     async function response() {
       const itemData = await (await fetch(`https://fakestoreapi.com/products/${id}`)).json();
@@ -40,7 +42,14 @@ function ItemCard({ id }) {
               >
                 +
               </button>
-              <button>Add to Cart</button>
+              <button
+                onClick={() => {
+                  setCart([...cart, { img: data.image, name: data.title, price: data.price, quantity: quantity }]);
+                  console.log(cart);
+                }}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
