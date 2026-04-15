@@ -11,9 +11,19 @@ function Cart() {
           {cart.map((item) => (
             <li className={styles.item} key={item.name}>
               <img src={item.img} alt="" />
-              <p>{item.name}</p>
-              <p>{item.price}</p>
-              <p>{item.quantity}</p>
+              <div className={styles.name}>
+                <p>{item.name}</p>
+                <p>${item.price}</p>
+              </div>
+              <div className={styles.quantity}>
+                <button>-</button>
+                <input type="number" />
+                <button>+</button>
+              </div>
+              <div className={styles.overall}>
+                <p>{item.quantity}</p>
+                <button>remove</button>
+              </div>
             </li>
           ))}
         </ul>
