@@ -5,7 +5,7 @@ import styles from './itemCard.module.css';
 function ItemCard({ id }) {
   const [data, setData] = useState();
   const [quantity, setQuantity] = useState(1);
-  const { cart, setCart } = useOutletContext();
+  const { cart, detectDuplicates } = useOutletContext();
   useEffect(() => {
     async function response() {
       const itemData = await (await fetch(`https://fakestoreapi.com/products/${id}`)).json();
@@ -44,8 +44,7 @@ function ItemCard({ id }) {
               </button>
               <button
                 onClick={() => {
-                  setCart([...cart, { img: data.image, name: data.title, price: data.price, quantity: quantity }]);
-                  console.log(cart);
+                  detectDuplicates({ img: data.image, name: data.title, price: data.price, quantity: quantity });
                 }}
               >
                 Add to Cart

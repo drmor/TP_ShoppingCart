@@ -1,8 +1,7 @@
 import { Link } from 'react-router';
 import styles from './navbar.module.css';
-import { useOutletContext } from 'react-router';
 
-function Nav() {
+function Nav({ arr }) {
   return (
     <nav>
       <div className={styles.branding}>
@@ -18,7 +17,7 @@ function Nav() {
           <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Cart ({arr.length})</Link>
         </li>
       </ul>
     </nav>
