@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './CartP.module.css';
 import { useOutletContext } from 'react-router';
 function Cart() {
-  const { cart } = useOutletContext();
+  const { cart, manipulate } = useOutletContext();
   return (
     <>
       <div className={styles.container}>
@@ -16,13 +16,31 @@ function Cart() {
                 <p>${item.price}</p>
               </div>
               <div className={styles.quantity}>
-                <button>-</button>
-                <input type="number" />
-                <button>+</button>
+                <button
+                  onClick={() => {
+                    manipulate.subtract(item);
+                  }}
+                >
+                  -
+                </button>
+                <input type="number" value={item.quantity} onChange={(event) => manipulate.increase(item, parseInt(event.target.value))} />
+                <button
+                  onClick={() => {
+                    manipulate.add(item);
+                  }}
+                >
+                  +
+                </button>
               </div>
               <div className={styles.overall}>
-                <p>{item.quantity}</p>
-                <button>remove</button>
+                <p>${item.price * item.quantity}</p>
+                <button
+                  onClick={() => {
+                    manipulate.delete(item);
+                  }}
+                >
+                  remove
+                </button>
               </div>
             </li>
           ))}

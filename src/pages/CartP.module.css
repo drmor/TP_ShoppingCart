@@ -48,6 +48,8 @@
 .quantity input {
   width: 50%;
   height: 92%;
+  font-size: 1.1rem;
+  text-align: center;
 }
 .quantity button {
   height: 100%;
