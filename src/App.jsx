@@ -7,8 +7,7 @@ import Cart from './pages/CartP';
 function App() {
   return (
     <>
-      <Nav />
-      <Cart />
+      <Home />
     </>
   );
 }
